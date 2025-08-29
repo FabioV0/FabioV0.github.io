@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/background.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header"> 
+        <div class="logo"><link href="">
+            <img src="/images/amatista.png" alt="Logo">
+        </div>
+        <h1 class="tittle">PORTOFOLIO FABIO V.</h1>
+        <nav>
+            <a href="">Home</a>
+            <a href="/htmls/services.html">Services</a>
+            <a href="/htmls/contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="barra"><h2 class="barra">You are in the page Home</h2></div>
+
+<script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const increment = target / 100; // velocidad del conteo
+    if(count < target){
+      counter.innerText = Math.ceil(count + increment);
+      setTimeout(updateCount, 20);
+    } else {
+      counter.innerText = target;
+    }
+  }
+  updateCount();
+});
+</script>
+
+    </div>
+
+    <footer class="footer">
+        <h1 class="tittlefooter">PORTOFOLIO</h1>
+        <div class="logo">
+            <img src="/images/amatista.png" alt="Logofooter" class="logofooter">
+        </div>
+        <nav class="linksfooter">
+                <button class="glow-on-hover" type="button">Discord</button>
+                <button class="glow-on-hover" type="button">Fiverr</button>
+                <button class="glow-on-hover" type="button">Gmail</button>
+            </nav>
+    </footer>
+
+<script>
+  // Detecta elementos con la clase .scroll-anim
+  const scrollElements = document.querySelectorAll(".scroll-anim");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show"); // activa animación
+        observer.unobserve(entry.target);  // solo una vez
+      }
+    });
+  });
+
+  scrollElements.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
