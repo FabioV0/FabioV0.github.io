@@ -1,0 +1,18 @@
+body {
+    height: 100vh;
+    background: linear-gradient(45deg, rgb(15, 15, 20), rgb(25, 25, 30), rgb(35, 35, 45), rgb(60, 60, 70), rgb(120, 120, 140));
+    background-size: 400%, 400%;
+    animation: gradient 12s ease-in infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
