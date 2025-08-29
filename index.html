@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header"> 
+        
+        <h1 class="tittle">PORTOFOLIO</h1>
+        <div class="logo">
+            <img src="/images/amatista.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="">Home</a>
+            <a href="/htmls/services.html">Services</a>
+            <a href="/htmls/contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="barra"><h2 class="barra">You are in the page Home</h2></div>
+
+    <div class="info1">
+        <div class="fondo">
+            <div class="titulos scroll-anim"><h2>Hi!👋</h2>
+            <div class="textosp scroll-anim"><p>I am a Minecraft server specialist from Colombia with several years of hands-on experience configuring and managing servers and networks. My expertise includes setting up Tebex stores, customizing templates, creating unique gamemodes, configuring ranks, and optimizing performance for smooth and reliable gameplay. I am recognized for being efficient, detail-oriented, and transparent — if there is something I can’t do, I will let you know immediately, but when I commit to a task, I make sure it is completed to the highest standard. My mission is to help communities and projects thrive through professional, well-structured, and engaging Minecraft servers.</p></div>
+        </div>
+    </div>
+      <div class="cards-container">
+  <a class="card glow-on-hover-2" href="https://es.fiverr.com/s/5rBdm9b"><div>
+    <img src="images/services.png" alt="Services Icon" class="icon scroll-anim">
+    <h2 class="title scroll-anim">Services done</h2>
+    <p class="counter scroll-anim" data-target="30">0</p>
+  </div></a>
+  <a class="card glow-on-hover-2" href="https://es.fiverr.com/s/5rBdm9b"><div>
+    <img src="images/mapas.png" alt="Countries Icon" class="icon scroll-anim">
+    <h2 class="title scroll-anim">Countries</h2>
+    <p class="counter scroll-anim" data-target="9">0</p>
+  </div></a>
+  <a class="card glow-on-hover-2" href="https://es.fiverr.com/s/5rBdm9b"><div>
+    <img src="images/project-management.png" alt="Projects Icon" class="icon scroll-anim">
+    <h2 class="title scroll-anim">Projects</h2>
+    <p class="counter scroll-anim" data-target="5">0</p>
+  </div></a>
+  <a class="card glow-on-hover-2" href="https://es.fiverr.com/s/5rBdm9b"><div>
+    <img src="images/estrella.png" alt="Projects Icon" class="icon scroll-anim">
+    <h2 class="title scroll-anim">Qualifications</h2>
+    <p class="counter scroll-anim" data-target="4.7">0</p>
+  </div></a>
+  <a class="card glow-on-hover-2" href="https://es.fiverr.com/s/5rBdm9b"><div>
+    <img src="images/usuarios.png" alt="Projects Icon" class="icon scroll-anim">
+    <h2 class="title scroll-anim ">Clients</h2>
+    <p class="counter scroll-anim" data-target="20">0</p>
+  </div></a>
+</div>
+
+<script>
+const countersPlus = document.querySelectorAll('.counter');
+
+countersPlus.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText.replace('+',''); // quitar + si ya existe
+    const increment = target / 100;
+
+    if(count < target){
+      counter.innerText = Math.ceil(count + increment) + '+';
+      setTimeout(updateCount, 100);
+    } else {
+      counter.innerText = target + '+';
+    }
+  }
+  updateCount();
+});
+</script>
+
+
+    </div>
+
+    <footer class="footer">
+        <h1 class="tittlefooter">PORTOFOLIO</h1>
+        <div class="logo">
+            <img src="/images/amatista.png" alt="Logofooter" class="logofooter">
+        </div>
+        <nav class="linksfooter">
+                <button class="glow-on-hover" type="button">Discord</button>
+                <button class="glow-on-hover" type="button">Fiverr</button>
+                <button class="glow-on-hover" type="button">Gmail</button>
+            </nav>
+    </footer>
+
+<script>
+  // Detecta elementos con la clase .scroll-anim
+  const scrollElements = document.querySelectorAll(".scroll-anim");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show"); // activa animación
+        observer.unobserve(entry.target);  // solo una vez
+      }
+    });
+  });
+
+  scrollElements.forEach(el => observer.observe(el));
+</script>
+
+
+</body>
+</html>         
