@@ -49,7 +49,7 @@
   <a class="card glow-on-hover-2" href="https://es.fiverr.com/s/5rBdm9b"><div>
     <img src="images/estrella.png" alt="Projects Icon" class="icon scroll-anim">
     <h2 class="title scroll-anim">Rating</h2>
-    <p class="counter scroll-anim" data-target="5.0">0</p>
+    <p class="counter2 scroll-anim" data-target="5.0">0.0★</p>
   </div></a>
   <a class="card glow-on-hover-2" href="https://es.fiverr.com/s/5rBdm9b"><div>
     <img src="images/usuarios.png" alt="Projects Icon" class="icon scroll-anim">
@@ -78,7 +78,27 @@ countersPlus.forEach(counter => {
   }
   updateCount();
 });
+
+// ✅ Rating counter con estrella "★" (sin "+")
+const countersStar = document.querySelectorAll('.counter2');
+
+countersStar.forEach(counter => {
+  const updateStar = () => {
+    const target = parseFloat(counter.getAttribute('data-target'));
+    const count = parseFloat(counter.innerText.replace('★','')) || 0;
+    const increment = target / 60;
+
+    if (count < target) {
+      counter.innerText = (count + increment).toFixed(1) + '★';
+      setTimeout(updateStar, 30);
+    } else {
+      counter.innerText = target.toFixed(1) + '★';
+    }
+  }
+  updateStar();
+});
 </script>
+
     </div>
 <div class="backgruond_div_color">
   <div class="fondo">
